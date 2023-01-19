@@ -123,22 +123,16 @@ document.getElementById('insertProducto').addEventListener('submit', (event) => 
     document.getElementById('thumbnail').value = '';
 });
 
-let username = document.cookie;
+//Busco el elemento del DOM con el id tituloUsername
+let tituloUsername = document.getElementById('tituloUsername');
+//Seteo el texto del elemento con el valor de la cookie
+tituloUsername.textContent = `Bienvenido ${document.cookie}`
 
-console.log(username);
 
 document.getElementById('formDesloguear').addEventListener('submit', (event) => {
+    
     event.preventDefault();
+    //Cambiar al documento logout.html
+    location.href = 'http://localhost:8080/logout.html';
     
-    console.log('click en desloguear');
-    
-    
-    fetch('/logout', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        }
-    })
-    .catch(err => console.log(err));
-
 });

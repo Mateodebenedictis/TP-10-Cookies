@@ -32,6 +32,7 @@ app.use(session({
 
 app.get('/', (req, res) => {
     //Verifico si existe el username en la session
+    console.log('/ route: ', req.session.username)
     if (!req.session.username) {
         res.sendFile(__dirname + '/public/login.html');
     } else {
@@ -42,19 +43,17 @@ app.get('/', (req, res) => {
 app.post('/login', (req, res) => {
     //Guardo el username en la session
     req.session.username = req.body.username;
-    res.sendFile(__dirname + '/public/index.html');
+    console.log('Login: ', req.session.username)
+    res.redirect('/');
 })
 
 app.post('/logout', (req, res) => {
 
-    res.sendFile(__dirname + '/public/logout.html');
-    setTimeout(() => {
-        req.session.destroy((err) => {
-            if (!err) res.sendFile(__dirname + '/public/index.html');
-            else res.send({ status: "Logout ERROR", body: err });
-        });
-    }, 2000);
-
+    req.session.destroy((err) => {
+        if (!err) {res.redirect('/');}
+        else {res.send({ status: "Logout ERROR", body: err });}
+    });
+    
 });
 
 app.get("/info", (req, res) => {

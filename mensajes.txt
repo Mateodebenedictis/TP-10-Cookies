@@ -284,5 +284,18 @@
     "text": "fischer pro mtn 80ti",
     "date": "[12/1/2023, 1:47:54]",
     "id": 22
+  },
+  {
+    "author": {
+      "id": "mateodebenedictismazza@gmail.com",
+      "nombre": "Mateo",
+      "apellido": "De Benedictis Mazza",
+      "edad": "30",
+      "alias": "Toti",
+      "avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-256.png"
+    },
+    "text": "fischer pro mtn 80ti",
+    "date": "[1/19/2023, 1:07:40 PM]",
+    "id": 23
   }
 ]
